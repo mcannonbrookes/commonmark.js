@@ -237,6 +237,12 @@ var parse_and_render = function(z) {
 for (var j = 0; j < cases.length; j++) {
     pathologicalTest(cases[j], results, parse_and_render);
 }
+
+
+specTests('test/extratests.txt', results, function(z) {
+        return writer.render(reader.parse(z));
+    });
+
 cursor.write('\n');
 
 cursor.write(results.passed.toString() + ' tests passed, ' +

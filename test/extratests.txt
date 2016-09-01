@@ -1,0 +1,44 @@
+## Image Attributes
+
+Still to test:
+* multiple spaces between
+* new lines between pairs
+* escaped } and " characters in attributes
+* attributes without pairs (single params)
+
+simple image - width=50, no title
+
+```````````````````````````````` example
+![foo](/url){width="50"}
+.
+<p><img src="/url" alt="foo" width="50" /></p>
+````````````````````````````````
+
+no quotes
+
+```````````````````````````````` example
+![foo](/url){width=50}
+.
+<p><img src="/url" alt="foo" width="50" /></p>
+````````````````````````````````
+
+simple image - width=50, with title
+```````````````````````````````` example
+![foo](/url "title"){width="50"}
+.
+<p><img src="/url" alt="foo" title="title" width="50" /></p>
+````````````````````````````````
+
+simple image - width=50, height=100, with title
+```````````````````````````````` example
+![foo](/url "title"){width="50" height="100"}
+.
+<p><img src="/url" alt="foo" title="title" width="50" height="100" /></p>
+````````````````````````````````
+
+simple image, no attributes, extra space
+```````````````````````````````` example
+![foo](/url "title") {width="50"}
+.
+<p><img src="/url" alt="foo" title="title" /> {width=&quot;50&quot;}</p>
+````````````````````````````````
